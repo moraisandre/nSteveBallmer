@@ -1,16 +1,16 @@
 {
 	"manifest_version": 2,
-	"name": "Veganator",
-	"version": "1.1",
-	"description": "Troque todas as imagens do site por fotos de verduras e legumes.",
+	"name": "nSteveBallmer",
+	"version": "1.0",
+	"description": "A Chrome extension that replace all images with Steve Ballmer DEVELOPER presentation",
 	"icons": {
-    	"48": "icon48.png",
-        "128": "icon128.png"
+    	"48": "icons/icon48.png",
+        "128": "icons/icon128.png"
     },
 	"content_scripts": [
 	    {
 	      "matches": ["*://*/*"],
-	      "js": ["jquery.js", "veganator.js"]
+	      "js": ["jquery.js", "nSteveBallmer.js"]
 	    }
   	]
 }
