@@ -1,5 +1,5 @@
-## Plugin para Chrome
+## Steve Ballmer's Chrome Extension
 
-Transforme todas as imagens de um site em verduras.
-
-https://chrome.google.com/webstore/detail/veganator/jogbccelbbkjmodfmppfbhmlhhhehclj
+DEVELOPERS, DEVELOPERS, DEVELOPERS, DEVELOPERS!
+ 
+Replace all boring images from any website with funny Steve Ballmer ones!
