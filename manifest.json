@@ -4,13 +4,22 @@
 	"version": "1.0",
 	"description": "A Chrome extension that replace all images with Steve Ballmer DEVELOPER presentation",
 	"icons": {
-    	"48": "icons/icon48.png",
-        "128": "icons/icon128.png"
-    },
+		"48": "icons/icon48.png",
+		"128": "icons/icon128.png"
+	},
+	"browser_action": {
+		"default_icon": "icons/icon48.png",
+		"default_popup": "menu.html"
+	},
 	"content_scripts": [
-	    {
-	      "matches": ["*://*/*"],
-	      "js": ["jquery.js", "nSteveBallmer.js"]
-	    }
-  	]
+		{
+			"matches": [
+				"*://*/*"
+			],
+			"js": [
+				"jquery.js",
+				"nSteveBallmer.js"
+			]
+		}
+	]
 }

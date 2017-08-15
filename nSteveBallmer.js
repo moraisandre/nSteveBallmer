@@ -1,18 +1,18 @@
 //nSteveBallmer 
-(function($) {
-	
-    var self = $.nSteveBallmer = new function(){};
-	
+(function ($) {
+
+    var self = $.nSteveBallmer = new function () { };
+
     $.extend(self, {
 
-    	nSteveBallmerBackgrounds : [
-    		'http://cdn.techpatio.com/wp-content/uploads/2010/03/steve_ballmer_sweating.jpg',
-    		'http://cdn.ttgtmedia.com/rms/computerweekly/Steve_Ballmer.jpg',
-    		'http://pocketnow.com/wp-content/uploads/2015/10/ballmer-sweats.jpg',
-    		'http://images.dailytech.com/nimage/14790_Steve_Ballmer_Developers.png'
-    	],
+        nSteveBallmerBackgrounds: [
+            'http://cdn.techpatio.com/wp-content/uploads/2010/03/steve_ballmer_sweating.jpg',
+            'http://cdn.ttgtmedia.com/rms/computerweekly/Steve_Ballmer.jpg',
+            'http://pocketnow.com/wp-content/uploads/2015/10/ballmer-sweats.jpg',
+            'http://images.dailytech.com/nimage/14790_Steve_Ballmer_Developers.png'
+        ],
 
-        nSteveBallmerImgs : [
+        nSteveBallmerImgs: [
             'http://i2.cdn.cnn.com/cnnnext/dam/assets/130823121452-02-steve-ballmer-horizontal-large-gallery.jpg',
             'https://www.tudocelular.com/img/id72955.jpg',
             'http://cdn.techpatio.com/wp-content/uploads/2010/03/steve_ballmer_sweating.jpg',
@@ -42,37 +42,32 @@
             'http://images.dailytech.com/nimage/Ballmer_Basketball_Wide.png'
         ],
 
-        handleImages : function (lstImgs, time)
-        {
-            $.each($('img'), function(i,item) { 
+        handleImages: function (lstImgs, time) {
+            $.each($('img'), function (i, item) {
                 //Skip if image is already replaced
-                if($.inArray($(item).attr('src'), lstImgs) == -1)
-                {
-					var h = $(item).height();
-					var w = $(item).width();
-					
-					//If image loaded
-					if(h > 0 && w > 0)
-					{
-						//Replace
-						$(item).css('width', w + 'px').css('height', h + 'px');
-						$(item).attr('src', lstImgs[Math.floor(Math.random() * lstImgs.length)]); 
-					}
-					else
-					{
-						//Replace when loaded
-						$(item).load(function(){
-							//Prevent 'infinite' loop
-							if($.inArray($(item).attr('src'), lstImgs) == -1)
-							{
-								var h = $(item).height();
-								var w = $(item).width();
-								$(item).css('width', w + 'px').css('height', h + 'px');
-								$(item).attr('src', lstImgs[Math.floor(Math.random() * lstImgs.length)]); 
-							}
-						});
-					}
-				}
+                if ($.inArray($(item).attr('src'), lstImgs) == -1) {
+                    var h = $(item).height();
+                    var w = $(item).width();
+
+                    //If image loaded
+                    if (h > 0 && w > 0) {
+                        //Replace
+                        $(item).css('width', w + 'px').css('height', h + 'px');
+                        $(item).attr('src', lstImgs[Math.floor(Math.random() * lstImgs.length)]);
+                    }
+                    else {
+                        //Replace when loaded
+                        $(item).load(function () {
+                            //Prevent 'infinite' loop
+                            if ($.inArray($(item).attr('src'), lstImgs) == -1) {
+                                var h = $(item).height();
+                                var w = $(item).width();
+                                $(item).css('width', w + 'px').css('height', h + 'px');
+                                $(item).attr('src', lstImgs[Math.floor(Math.random() * lstImgs.length)]);
+                            }
+                        });
+                    }
+                }
             });
 
             //Keep replacing
@@ -81,31 +76,52 @@
             }
         },
 
-        handleLogo : function (bgImgs, time)
-        {
-			$backgroundImages = $(
-            	'[class*=logo], [class*=header], [id*=header], [id*=logo],' +
-            	'[class*=logo] span, [class*=header] span, [id*=header] span, [id*=logo] span,' +
-            	'[class*=logo] h1, [class*=header] h1, [id*=header] h1, [id*=logo] h1,'+
-            	'[class*=logo] a, [class*=header] a, [id*=header] a, [id*=logo] a'
-            	)
-            	.filter(function() {
-            		backgroundImg = $(this).css('background-image');
-            		return backgroundImg && backgroundImg != 'none';
-            	}
-            );
+        handleLogo: function (bgImgs, time) {
+            $backgroundImages = $(
+                '[class*=logo], [class*=header], [id*=header], [id*=logo],' +
+                '[class*=logo] span, [class*=header] span, [id*=header] span, [id*=logo] span,' +
+                '[class*=logo] h1, [class*=header] h1, [id*=header] h1, [id*=logo] h1,' +
+                '[class*=logo] a, [class*=header] a, [id*=header] a, [id*=logo] a,' +
+                'html, body, div'
+            )
+                .filter(function () {
+                    backgroundImg = $(this).css('background-image');
+                    return backgroundImg && backgroundImg != 'none';
+                }
+                );
 
-            $backgroundImages.each(function(i, item) {
-            	$(item).css('background', 'blue');
-            	$(item).css('color', 'white');
-            	$(item).css('font-family', 'monospace');
+            $backgroundImages.each(function (i, item) {
+                $(item).css('background', 'blue');
+                $(item).css('color', 'white');
+                $(item).css('font-family', 'monospace');
             });
+        },
+
+        handleBackground: function () {
+            document.body.style.background = 'blue';
+
+            document.body.style.color = 'white';
+            document.body.style.fontFamily = 'monospace';
+            
+            //ToDo: deixar como função
+            var links = document.getElementsByTagName("a");
+
+            console.log('links.length ' + links.length);
+
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].href) {
+                    links[i].style.color = 'white';
+                }
+            }
         }
+
+        
     });
 
     //Run on jQuery ready
-    $(function(){
+    $(function () {
         self.handleImages(self.nSteveBallmerImgs, 2000);
-     	self.handleLogo(self.nSteveBallmerBackgrounds, 2000);
+        self.handleLogo(self.nSteveBallmerBackgrounds, 2000);
+        self.handleBackground();
     });
 })(jQuery);
