@@ -118,12 +118,59 @@
         setColorOnTag: function (color, tag) {
             var itens = document.getElementsByTagName(tag);
             
-                        for (var i = 0; i < itens.length; i++) {
-                            // if (itens[i].href) {
-                            //     itens[i].style.color = color;
-                            // }
-                            itens[i].style.color = color;
-                        }
+            self.setColorOnTag('white', 'a');
+            self.setColorOnTag('white', 'p');
+            self.setColorOnTag('white', 'h1');
+            self.setColorOnTag('white', 'h2');
+            self.setColorOnTag('white', 'h3');
+            self.setColorOnTag('white', 'h4');
+            self.setColorOnTag('white', 'h5');
+            self.setColorOnTag('white', 'h6');
+            self.setColorOnTag('white', 'div');
+            self.setColorOnTag('white', 'span');
+            self.setColorOnTag('white', 'cite');
+            self.setColorOnTag('white', 'em');
+            self.setColorOnTag('white', 'strong');
+            self.setBackgroundColorOnTag('blue', 'div');
+            self.setBackgroundColorOnTag('blue', 'ul');
+            self.setBackgroundColorOnTag('blue', 'li');
+            self.setBackgroundColorOnTag('blue', 'body');
+            self.setBackgroundColorOnTag('blue', 'a');
+            self.setBackgroundColorOnTag('blue', 'button');
+            self.setBackgroundColorOnTag('blue', 'span');
+            self.setFontOnTag('monospace', 'div');
+            self.setFontOnTag('monospace', 'p');
+            self.setFontOnTag('monospace', 'a');
+            self.setFontOnTag('monospace', 'button');
+            self.setFontOnTag('monospace', 'span');
+            self.setFontOnTag('monospace', 'ul');
+            self.setFontOnTag('monospace', 'li');
+
+            
+        },
+
+        setColorOnTag: function (color, tag) {
+            var itens = document.getElementsByTagName(tag);
+
+            for (var i = 0; i < itens.length; i++) {
+                itens[i].style.color = color;
+            }
+        },
+
+        setBackgroundColorOnTag: function (bgColor, tag) {
+            var itens = document.getElementsByTagName(tag);
+
+            for (var i = 0; i < itens.length; i++) {
+                itens[i].style.background = bgColor;
+            }
+        },
+
+        setFontOnTag: function (fontName, tag) {
+            var itens = document.getElementsByTagName(tag);
+
+            for (var i = 0; i < itens.length; i++) {
+                itens[i].style.fontFamily = fontName;
+            }
         }
 
 
