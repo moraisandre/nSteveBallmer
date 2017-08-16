@@ -102,20 +102,31 @@
 
             document.body.style.color = 'white';
             document.body.style.fontFamily = 'monospace';
+            console.log('antes');
+            self.setColorOnTag('white', 'a');
+            self.setColorOnTag('white', 'p');
+            self.setColorOnTag('white', 'h1');
+            self.setColorOnTag('white', 'h2');
+            self.setColorOnTag('white', 'h3');
+            self.setColorOnTag('white', 'h4');
+            self.setColorOnTag('white', 'h5');
+            self.setColorOnTag('white', 'h6');
+            self.setColorOnTag('div', 'blue');
+            console.log('depois');
+        },
+
+        setColorOnTag: function (color, tag) {
+            var itens = document.getElementsByTagName(tag);
             
-            //ToDo: deixar como função
-            var links = document.getElementsByTagName("a");
-
-            console.log('links.length ' + links.length);
-
-            for (var i = 0; i < links.length; i++) {
-                if (links[i].href) {
-                    links[i].style.color = 'white';
-                }
-            }
+                        for (var i = 0; i < itens.length; i++) {
+                            // if (itens[i].href) {
+                            //     itens[i].style.color = color;
+                            // }
+                            itens[i].style.color = color;
+                        }
         }
 
-        
+
     });
 
     //Run on jQuery ready
