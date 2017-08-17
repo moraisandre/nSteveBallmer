@@ -78,11 +78,11 @@
 
         handleLogo: function (bgImgs, time) {
             $backgroundImages = $(
-                '[class*=logo], [class*=header], [id*=header], [id*=logo],' +
+                '[class*=logo], [class*=header], [id*=header], [id*=logo], [class*=container]' +
                 '[class*=logo] span, [class*=header] span, [id*=header] span, [id*=logo] span,' +
                 '[class*=logo] h1, [class*=header] h1, [id*=header] h1, [id*=logo] h1,' +
                 '[class*=logo] a, [class*=header] a, [id*=header] a, [id*=logo] a,' +
-                'html, body, div'
+                '[class*=container] div, html, body, div'
             )
                 .filter(function () {
                     backgroundImg = $(this).css('background-image');
@@ -99,25 +99,9 @@
 
         handleBackground: function () {
             document.body.style.background = 'blue';
-
             document.body.style.color = 'white';
             document.body.style.fontFamily = 'monospace';
-            console.log('antes');
-            self.setColorOnTag('white', 'a');
-            self.setColorOnTag('white', 'p');
-            self.setColorOnTag('white', 'h1');
-            self.setColorOnTag('white', 'h2');
-            self.setColorOnTag('white', 'h3');
-            self.setColorOnTag('white', 'h4');
-            self.setColorOnTag('white', 'h5');
-            self.setColorOnTag('white', 'h6');
-            self.setColorOnTag('div', 'blue');
-            console.log('depois');
-        },
 
-        setColorOnTag: function (color, tag) {
-            var itens = document.getElementsByTagName(tag);
-            
             self.setColorOnTag('white', 'a');
             self.setColorOnTag('white', 'p');
             self.setColorOnTag('white', 'h1');
@@ -131,6 +115,23 @@
             self.setColorOnTag('white', 'cite');
             self.setColorOnTag('white', 'em');
             self.setColorOnTag('white', 'strong');
+            self.setColorOnTag('white', 'table');
+            self.setColorOnTag('white', 'th');
+            self.setColorOnTag('white', 'ul');
+            self.setColorOnTag('white', 'il');
+            self.setColorOnTag('white', 'input');
+            self.setColorOnTag('white', 'body');
+            self.setColorOnTag('white', 'button');
+            self.setColorOnTag('white', 'dd');
+            self.setColorOnTag('white', 'dl');
+            self.setColorOnTag('white', 'dt');
+            self.setColorOnTag('white', 'em');
+            self.setColorOnTag('white', 'fieldset');
+            self.setColorOnTag('white', 'form');
+            self.setColorOnTag('white', 'i');
+            self.setColorOnTag('white', 'label');
+            self.setColorOnTag('white', 'li');
+            self.setColorOnTag('white', 'ol');
             self.setBackgroundColorOnTag('blue', 'div');
             self.setBackgroundColorOnTag('blue', 'ul');
             self.setBackgroundColorOnTag('blue', 'li');
@@ -138,6 +139,19 @@
             self.setBackgroundColorOnTag('blue', 'a');
             self.setBackgroundColorOnTag('blue', 'button');
             self.setBackgroundColorOnTag('blue', 'span');
+            self.setBackgroundColorOnTag('blue', 'header');
+            self.setBackgroundColorOnTag('blue', 'footer');
+            self.setBackgroundColorOnTag('blue', 'img');
+            self.setBackgroundColorOnTag('blue', 'table');
+            self.setBackgroundColorOnTag('blue', 'th');
+            self.setBackgroundColorOnTag('blue', 'input');
+            self.setBackgroundColorOnTag('blue', 'h1');
+            self.setBackgroundColorOnTag('blue', 'h2');
+            self.setBackgroundColorOnTag('blue', 'h3');
+            self.setBackgroundColorOnTag('blue', 'h4');
+            self.setBackgroundColorOnTag('blue', 'h5');
+            self.setBackgroundColorOnTag('blue', 'h6');
+            self.setBackgroundColorOnTag('blue', 'section');
             self.setFontOnTag('monospace', 'div');
             self.setFontOnTag('monospace', 'p');
             self.setFontOnTag('monospace', 'a');
@@ -145,8 +159,15 @@
             self.setFontOnTag('monospace', 'span');
             self.setFontOnTag('monospace', 'ul');
             self.setFontOnTag('monospace', 'li');
+            self.setFontOnTag('monospace', 'h1');
+            self.setFontOnTag('monospace', 'h2');
+            self.setFontOnTag('monospace', 'h3');
+            self.setFontOnTag('monospace', 'h4');
+            self.setFontOnTag('monospace', 'h5');
+            self.setFontOnTag('monospace', 'h6');
+            self.setFontOnTag('monospace', 'table');
+            self.setFontOnTag('monospace', 'input');
 
-            
         },
 
         setColorOnTag: function (color, tag) {
@@ -162,6 +183,8 @@
 
             for (var i = 0; i < itens.length; i++) {
                 itens[i].style.background = bgColor;
+                itens[i].style.background.color = bgColor;
+                itens[i].style.border = bgColor;
             }
         },
 
@@ -172,7 +195,6 @@
                 itens[i].style.fontFamily = fontName;
             }
         }
-
 
     });
 
