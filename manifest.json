@@ -11,6 +11,10 @@
 		"default_icon": "icons/icon48.png",
 		"default_popup": "menu.html"
 	},
+	"permissions": [
+		"storage",
+		 "tabs"
+	  ],
 	"content_scripts": [
 		{
 			"matches": [

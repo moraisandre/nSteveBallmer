@@ -1,6 +1,37 @@
 //nSteveBallmer 
 (function ($) {
 
+    // chrome.storage.local.set({
+    //     kitten:  {name:"Mug", eats:"mice"},
+    //     monster: {name:"Kraken", eats:"people"}
+    //   });
+
+    // //   let gettingItem = chrome.storage.local.get();
+    // //   gettingItem.then(onGot, onError);
+
+    //   chrome.storage.local.get("kitten", function(items){
+    //     console.log(items.kitten);  // -> {name:"Mog", eats:"mice"}
+    //   });
+
+      // Save it using the Chrome extension storage API.
+    // chrome.storage.sync.set({'foo': 'hello', 'bar': 'hi'}, function() {
+    //     console.log('Settings saved');
+    //   });
+  
+    //   // Read it using the storage API
+    //   chrome.storage.sync.get(['foo', 'bar'], function(items) {
+    //     message('Settings retrieved', items);
+    //   });
+
+    chrome.storage.sync.get("data", function(items) {
+        if (!chrome.runtime.error) {
+            console.log('data: ' + items.data);
+        }
+      });
+
+    
+
+    /*
     var self = $.nSteveBallmer = new function () { };
 
     $.extend(self, {
@@ -204,4 +235,17 @@
         self.handleLogo(self.nSteveBallmerBackgrounds, 2000);
         self.handleBackground();
     });
+*/
+    chrome.storage.onChanged.addListener(function(changes, namespace) {
+        console.log('chrome.storage.onChanged.addL');
+        for (key in changes) {
+          var storageChange = changes[key];
+          console.log('Storage key "%s" in namespace "%s" changed. ' +
+                      'Old value was "%s", new value is "%s".',
+                      key,
+                      namespace,
+                      storageChange.oldValue,
+                      storageChange.newValue);
+        }
+      });
 })(jQuery);
