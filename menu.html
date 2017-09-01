@@ -1,24 +1,40 @@
-<!-- <html>
-    <head>
-    <script>
-              function saveChanges() {
-                console.log('saveChanges');
-                chrome.storage.sync.set({'foo': 'hello', 'bar': 'hi'}, function() {
-      console.log('Settings saved');
-    });
-
-    console.log('saveChanges END');
-      }
-    </script>
-    </head>
-    <body>
-        <h3>Options for DEVELOPERS</h3>
-        <img src="icons/icon48.png">
-        <input type="button" value="TEST" onclick="saveChanges()" >
-
-    </body>
-</html> -->
 <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src='popup.js'></script>
+</head>
+
+<body>
+
+  <button id="TESTE">Call the function</button>
+
+
+  <fieldset>
+    <legend>Options for DEVELOPERS</legend>
+
+
+
+    <div>
+      <input type="checkbox" id="replaceImagesCb" name="replaceImagesCb" >
+      <label for="replaceImagesCb">Replace all images?</label>
+    </div>
+    <div>
+      <input type="checkbox" id="blueBg">
+      <label for="blueBg">BSOD Theme?</label>
+    </div>
+  </fieldset>
+
+</body>
+
+<br><br>
+
+<footer>Created by André Morais</footer>
+
+</html>
+<!-- 
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
@@ -29,7 +45,7 @@
   <button id="set">Set</button>
   <script src="popup.js"></script>
 </body>
-</html>
+</html> -->
 <!-- 
 https://stackoverflow.com/questions/24279495/window-localstorage-vs-chrome-storage-local/24281357#24281357
 https://gist.github.com/IzumiSy/765cfd6dc02c79de875e -->

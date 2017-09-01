@@ -1,0 +1,19 @@
+body{
+  background: blue;
+  color: white;
+  font-family: monospace;
+  width: 300px;
+  height: 100px;
+}
+
+h3{
+  background: white;
+  color: blue;
+  font-family: monospace;
+}
+
+legend{
+  background: white;
+  color: blue;
+  font-family: monospace;
+}

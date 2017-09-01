@@ -1,21 +1,46 @@
 
 // popup.js
 
-document.body.onload = function() {
-    chrome.storage.sync.get("data", function(items) {
+window.onload = function () {
+  console.log('document.body.onload ');
+
+  chrome.storage.sync.get("replaceImages", function (items) {
+    if (!chrome.runtime.error) {
+      console.log(items);
+      console.log(items.data);
+      console.log(items.value);
+      document.getElementById("replaceImagesCb").checked = items.data;
+    }
+  });
+
+  document.getElementById("TESTE").addEventListener("click", function () {
+
+    //asdasdas
+
+    chrome.storage.sync.get("replaceImages", function (items) {
       if (!chrome.runtime.error) {
         console.log(items);
-        document.getElementById("data").innerText = items.data;
+        console.log(items[0]);
+        console.log(items.value);
+        document.getElementById("replaceImagesCb").checked = items.data;
       }
     });
-  }
-  
-  document.getElementById("set").onclick = function() {
-    var d = document.getElementById("text").value;
-    chrome.storage.sync.set({ "data" : d }, function() {
+
+    //asdas
+
+
+    console.log('in ');
+
+    var value = document.getElementById("replaceImagesCb").checked;
+
+    console.log('value ' + value);
+
+    chrome.storage.sync.set({ "replaceImages": value }, function () {
       if (chrome.runtime.error) {
         console.log("Runtime error.");
       }
     });
-    window.close();
   }
+  );
+}
+
