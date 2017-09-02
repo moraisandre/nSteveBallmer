@@ -1,46 +1,35 @@
-
 // popup.js
 
 window.onload = function () {
-  console.log('document.body.onload ');
+  //console.log('document.body.onload ');
 
-  chrome.storage.sync.get("replaceImages", function (items) {
+  chrome.storage.sync.get("replaceImgValue", function (items) {
     if (!chrome.runtime.error) {
-      console.log(items);
-      console.log(items.data);
-      console.log(items.value);
-      document.getElementById("replaceImagesCb").checked = items.data;
+      console.log('items.value ' + items.replaceImgValue);
+      document.getElementById("replaceImagesCbx").checked = items.replaceImgValue;
     }
   });
 
-  document.getElementById("TESTE").addEventListener("click", function () {
-
+  document.getElementById("replaceImagesCbx").addEventListener("click", function () {
     //asdasdas
 
-    chrome.storage.sync.get("replaceImages", function (items) {
-      if (!chrome.runtime.error) {
-        console.log(items);
-        console.log(items[0]);
-        console.log(items.value);
-        document.getElementById("replaceImagesCb").checked = items.data;
-      }
-    });
-
-    //asdas
-
-
-    console.log('in ');
-
-    var value = document.getElementById("replaceImagesCb").checked;
+    var value = document.getElementById("replaceImagesCbx").checked;
 
     console.log('value ' + value);
 
-    chrome.storage.sync.set({ "replaceImages": value }, function () {
+    chrome.storage.sync.set({ "replaceImgValue": value }, function () {
       if (chrome.runtime.error) {
         console.log("Runtime error.");
       }
     });
-  }
-  );
+
+    chrome.storage.sync.get("replaceImgValue", function (items) {
+      if (!chrome.runtime.error) {
+        console.log('items.replaceImgValue ' + items.replaceImgValue);
+        document.getElementById("replaceImagesCbx").checked = items.replaceImgValue;
+      }
+    });
+
+  });
 }
 

@@ -1,5 +1,16 @@
 //nSteveBallmer 
 (function ($) {
+    var replaceImg = false;
+
+    chrome.storage.sync.get("replaceImgValue", function (items) {
+        if (!chrome.runtime.error) {
+          console.log('nSteveBallmer value ' + items.replaceImgValue);
+          replaceImg = items.replaceImgValue;
+        }
+      });
+
+      if(replaceImg)
+        return;
     
     var self = $.nSteveBallmer = new function () { };
 
@@ -200,6 +211,10 @@
 
     //Run on jQuery ready
     $(function () {
+
+        if(!replaceImg)
+            return;
+
         self.handleImages(self.nSteveBallmerImgs, 2000);
         self.handleLogo(self.nSteveBallmerBackgrounds, 2000);
         self.handleBackground();
