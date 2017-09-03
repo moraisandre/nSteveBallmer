@@ -1,6 +1,9 @@
 # Steve Ballmer's Chrome Extension
 
 [![Release](https://img.shields.io/github/release/moraisandre/nSteveBallmer.svg)](https://github.com/moraisandre/nSteveBallmer/releases)  
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/gehfhnephngekdnodedkeoegelcdkjna.svg)](https://chrome.google.com/webstore/detail/nsteveballmer/gehfhnephngekdnodedkeoegelcdkjna)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/stars/gehfhnephngekdnodedkeoegelcdkjna.svg)](https://chrome.google.com/webstore/detail/nsteveballmer/gehfhnephngekdnodedkeoegelcdkjna)
+
 
 DEVELOPERS, DEVELOPERS, DEVELOPERS, DEVELOPERS!
  
