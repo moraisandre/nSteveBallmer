@@ -10,6 +10,13 @@ A good extension for prank your friends when they leave the computer unlocked
 
 <img src="icons/icon128.png">
 
+## Chrome Store
+
+<a href="https://chrome.google.com/webstore/detail/nsteveballmer/gehfhnephngekdnodedkeoegelcdkjna">
+<img src="images/badge/ChromeWebStore.png">
+</a>
+
+
 ## Features
 - Replace all the images of a WebSite for Steve Ballmer's one
 - Set the BSOD theme on any web
