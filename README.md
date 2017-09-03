@@ -1,5 +1,7 @@
 # Steve Ballmer's Chrome Extension
 
+[![Release](https://img.shields.io/github/release/moraisandre/nSteveBallmer.svg)](https://github.com/moraisandre/nSteveBallmer/releases)  
+
 DEVELOPERS, DEVELOPERS, DEVELOPERS, DEVELOPERS!
  
 Replace all boring images from any website with funny Steve Ballmer ones!
