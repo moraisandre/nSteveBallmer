@@ -9,7 +9,7 @@ DEVELOPERS, DEVELOPERS, DEVELOPERS, DEVELOPERS!
  
 Replace all boring images from any website with funny Steve Ballmer ones!
 
-A good extension for prank your friends when they leave the computer unlocked
+A good extension for pranking your friends when they leave the computer unlocked
 
 <img src="icons/icon128.png">
 
