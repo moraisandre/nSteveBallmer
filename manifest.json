@@ -1,22 +1,38 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "nSteveBallmer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Chrome extension that replaces all images with Steve Ballmer. DEVELOPERS, DEVELOPERS, DEVELOPERS, DEVELOPERS!",
   "icons": {
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "browser_action": {
+  "action": {
     "default_icon": "icons/icon48.png",
     "default_popup": "menu.html"
   },
-  "permissions": ["storage", "tabs"],
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
-      "matches": ["*://*/*"],
-      "js": ["jquery.js", "nSteveBallmer.js"]
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "jquery.js",
+        "nSteveBallmer.js"
+      ]
     }
   ],
-  "web_accessible_resources": ["images/*.jpg"]
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*.jpg"
+      ],
+      "matches": [
+        "*://*/*"
+      ]
+    }
+  ]
 }

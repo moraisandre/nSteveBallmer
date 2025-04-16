@@ -17,3 +17,19 @@ legend {
   color: blue;
   font-family: monospace;
 }
+
+fieldset {
+  height: 80px;
+}
+
+div {
+  margin-top: 10px;
+}
+
+label {
+  font-size: 14px;
+}
+
+legend {
+  font-size: 13px;
+}
